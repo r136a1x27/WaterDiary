@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".Calendar2">
 
+    <!--시작 날짜가 2020.01.01이고 마지막 날짜가 2023.12.31인 달력-->
     <CalendarView
         android:id="@+id/calendar"
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
         android:minDate="01/01/2020"
         android:maxDate="12/31/2023"/>
 
+    <!--오늘의 소감을 적는 부분을 표시하는 TextView-->
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -30,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--사용자가 간단한 소감을 적는 EditText-->
         <EditText
             android:layout_width="match_parent"
             android:layout_height="116dp"
@@ -41,6 +44,7 @@
             android:fontFamily="@font/mice"
             android:visibility="invisible"/>
 
+        <!--사용자가 저장한 소감을 보여주는 TextView-->
         <TextView
             android:id="@+id/diaryContent"
             android:layout_width="match_parent"
@@ -60,6 +64,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!--사용자가 입력한 소감을 저장하는 저장 버튼-->
         <Button
             android:id="@+id/save"
             android:layout_width="wrap_content"
@@ -69,6 +74,7 @@
             android:visibility="invisible"
             android:fontFamily="@font/mice"/>
 
+        <!--사용자가 저장한 내용을 수정하기 위한 수정 버튼-->
         <Button
             android:id="@+id/nsave"
             android:layout_width="wrap_content"
@@ -78,6 +84,7 @@
             android:visibility="invisible"
             android:fontFamily="@font/mice"/>
 
+        <!--사용자가 저장한 내용을 삭제하기 위한 삭제 버튼-->
         <Button
             android:id="@+id/delete"
             android:layout_width="wrap_content"

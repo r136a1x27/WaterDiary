@@ -8,6 +8,7 @@
     android:paddingTop="20dp"
     tools:context=".MainActivity">
 
+    <!--어플리케이션 이름을 적기 위한 TextView-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -17,6 +18,7 @@
         android:textSize="45dp"
         android:fontFamily="@font/micebold"/>
 
+    <!--Calendar2 액티비티와 연결된 ImageButton-->
     <ImageButton
         android:id="@+id/mainImage"
         android:layout_width="match_parent"
@@ -26,11 +28,13 @@
         android:layout_marginBottom="20dp"
         android:src="@drawable/cup2_70" />
 
+    <!--ImageButton 아래 버튼들이 위치할 LinearLayout-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
 
+        <!--목표추가 버튼-->
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="wrap_content"
@@ -39,6 +43,7 @@
             android:text="목표추가"
             android:fontFamily="@font/mice"/>
 
+        <!--기록하기 버튼-->
         <Button
             android:id="@+id/btnReg"
             android:layout_width="wrap_content"
@@ -47,6 +52,7 @@
             android:text="기록하기"
             android:fontFamily="@font/mice"/>
 
+        <!--알람추가 버튼-->
         <Button
             android:id="@+id/btnAlarm"
             android:layout_width="wrap_content"

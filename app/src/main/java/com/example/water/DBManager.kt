@@ -11,6 +11,7 @@ class DBManager(
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
+        /*DB에 저장할 목표 성취량(goal), 한 컵의 용량(cup), 마신 물의 양(drinked) 선언*/
         db!!.execSQL("CREATE TABLE personnel(goal INTEGER, cup INTEGER, drinked INTEGER);")
     }
 

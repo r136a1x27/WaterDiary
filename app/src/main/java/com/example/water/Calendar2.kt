@@ -42,7 +42,8 @@ class Calendar2 : AppCompatActivity() {
         delete = findViewById(R.id.delete)
         dcontent = findViewById(R.id.diaryContent)
 
-
+        /*calendar를 클릭하는 경우, 사용자의 소감을 입력하여 저장할 수 있도록 title과 note, 저장 버튼이 보이게 함 */
+        /*이미 내용이 저장된 날짜라면 입력을 받는 note부분이 빈칸이 되고 달력 내용을 조회하는 함수 호출*/
         calendar.setOnDateChangeListener { view, year, month, dayOfMonth ->
             title.visibility = View.VISIBLE
             note.visibility = View.VISIBLE
@@ -54,6 +55,9 @@ class Calendar2 : AppCompatActivity() {
             checkNote(year, month, dayOfMonth, myID)
         }
 
+        /*저장 버튼 클릭 시 달력 내용을 추가하는 함수를 통해 내용 저장*/
+        /*사용자가 입력을 하는 note와 저장 버튼을 보이지 않게 하고, 사용자가 입력한 내용을 dcontent(TextView)를 통해 보여줌*/
+        /*보이지 않던 삭제, 수정 버튼이 보이게 됨*/
         save.setOnClickListener {
             saveNote(myName)
             note.visibility = View.INVISIBLE
@@ -66,7 +70,9 @@ class Calendar2 : AppCompatActivity() {
         }
     }
 
+    /*달력 내용을 조회, 수정하기 위한 함수*/
     fun checkNote(cYear: Int, cMonth: Int, cDay: Int, myID: String) {
+        /*사용자가 입력한 내용을 저장할 파일 이름 설정*/
         myName = "" + myID + cYear + "-" + (cMonth+1) + "" + "-" + cDay + ".txt"
         var fileInputStream: FileInputStream
         try {
@@ -81,6 +87,8 @@ class Calendar2 : AppCompatActivity() {
             save.visibility = View.INVISIBLE
             nsave.visibility = View.VISIBLE
             delete.visibility = View.VISIBLE
+            /*수정 버튼 클릭 시 note(EditText)에 저장되어있던 문자열이 출력됨*/
+            /*저장 버튼이 다시 활성화*/
             nsave.setOnClickListener {
                 note.visibility = View.VISIBLE
                 dcontent.visibility = View.INVISIBLE
@@ -90,6 +98,8 @@ class Calendar2 : AppCompatActivity() {
                 delete.visibility = View.INVISIBLE
                 dcontent.text = note.text
             }
+            /*삭제 버튼 클릭 시 note 내용이 빈칸으로 설정됨*/
+            /*해당 날짜에 저장되어있던 내용 파일 역시 삭제됨*/
             delete.setOnClickListener {
                 dcontent.visibility = View.INVISIBLE
                 nsave.visibility = View.INVISIBLE
@@ -99,6 +109,7 @@ class Calendar2 : AppCompatActivity() {
                 save.visibility = View.VISIBLE
                 deleteNote(myName)
             }
+            /*소감 내용이 null 값이라면 소감을 입력하지 않았을 때와 같은 상태로 설정*/
             if (dcontent.text == null) {
                 title.visibility = View.VISIBLE
                 dcontent.visibility = View.INVISIBLE
@@ -112,6 +123,8 @@ class Calendar2 : AppCompatActivity() {
         }
     }
 
+    /*사용자가 입력한 내용을 저장하는 함수*/
+    /*note(EditText)에 입력한 문자열이 저장됨*/
     @SuppressLint("WrongConstant")
     fun saveNote(readDay: String?) {
         var fileOutputStream: FileOutputStream
@@ -125,6 +138,7 @@ class Calendar2 : AppCompatActivity() {
         }
     }
 
+    /*입력된 내용을 삭제하는 함수*/
     @SuppressLint("WrongConstant")
     fun deleteNote(readDay: String?) {
         var fileOutputStream: FileOutputStream

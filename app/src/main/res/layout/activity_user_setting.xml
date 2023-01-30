@@ -10,17 +10,19 @@
     android:paddingLeft="30dp"
     tools:context=".user_setting">
 
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+
+        <!--목표 섭취량을 입력하는 부분임을 알리는 TextView-->
         <TextView
             android:layout_width="80sp"
             android:layout_height="wrap_content"
             android:text="목표 섭취량"
             android:fontFamily="@font/mice"/>
 
+        <!--사용자가 목표 섭취량을 입력하는 EditText-->
         <EditText
             android:id="@+id/goal"
             android:layout_width="match_parent"
@@ -35,12 +37,15 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <!--한 컵의 용량을 입력하는 부분임을 알리는 TextView-->
         <TextView
             android:layout_width="80sp"
             android:layout_height="wrap_content"
             android:text="한 컵의 용량"
             android:fontFamily="@font/mice"/>
 
+        <!--사용자가 한 컵의 용량을 입력하는 EditText-->
         <EditText
             android:id="@+id/cup"
             android:layout_width="match_parent"
@@ -56,6 +61,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!--사용자가 입력한 내용을 DB에 저장하기 위한 저장 버튼-->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
@@ -64,6 +70,7 @@
             android:text="저장"
             android:fontFamily="@font/mice"/>
 
+        <!--입력을 저장하지 않고 메인 화면을 돌아가기 위한 취소 버튼-->
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
