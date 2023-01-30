@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">마시는 Diary</string>
+
+    <string name="action_home">홈</string>
+    <string name="action_goal">목표추가</string>
+    <string name="action_reg">기록하기</string>
+    <string name="action_alarm">알람설정</string>
+</resources>

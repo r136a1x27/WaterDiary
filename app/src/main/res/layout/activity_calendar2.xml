@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Calendar2">
+
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minDate="01/01/2020"
+        android:maxDate="12/31/2023"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="오늘의 소감"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:fontFamily="@font/mice"
+        android:background="@color/blue_500"
+        android:textColor="#fff"
+        android:visibility="invisible"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/note"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:hint="내용을 입력하세요."
+            android:fontFamily="@font/mice"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/diaryContent"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:visibility="invisible"
+            android:fontFamily="@font/mice"
+            app:layout_constraintBottom_toBottomOf="@+id/note"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/note"
+            app:layout_constraintTop_toTopOf="@+id/note" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="저장"
+            android:layout_marginStart="100dp"
+            android:visibility="invisible"
+            android:fontFamily="@font/mice"/>
+
+        <Button
+            android:id="@+id/nsave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:layout_marginStart="10dp"
+            android:visibility="invisible"
+            android:fontFamily="@font/mice"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+            android:layout_marginStart="10dp"
+            android:visibility="invisible"
+            android:fontFamily="@font/mice"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="마시는 Diary"
+        android:textColor="@color/blue_500"
+        android:gravity="center"
+        android:textSize="45dp"
+        android:fontFamily="@font/micebold"/>
+
+    <ImageButton
+        android:id="@+id/mainImage"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/cup2_70" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="목표추가"
+            android:fontFamily="@font/mice"/>
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="기록하기"
+            android:fontFamily="@font/mice"/>
+
+        <Button
+            android:id="@+id/btnAlarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:text="알람추가"
+            android:fontFamily="@font/mice"/>
+
+    </LinearLayout>
+</LinearLayout>
